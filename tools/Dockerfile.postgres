@@ -1,0 +1,9 @@
+FROM postgres:14
+
+COPY tools/database/fixtures /database/fixtures
+COPY tools/database /tmp/database
+RUN find /tmp/database -type f -exec cp {} /docker-entrypoint-initdb.d/ \;
+
+RUN rm -r /tmp/database
+
+EXPOSE 5432
