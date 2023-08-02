@@ -1,9 +1,8 @@
-create table if not exists characters(
+create table if not exists test_table(
     id serial not null primary key,
-    name varchar(244) not null,
-    from_where varchar(244) not null
+    name varchar(244) not null
 );
 
-copy characters (id, name, from_where)
-    from '/database/fixtures/character.csv'
+copy test_table (id, name)
+    from '/database/fixtures/test_table.csv'
     delimiter ';' csv header;
