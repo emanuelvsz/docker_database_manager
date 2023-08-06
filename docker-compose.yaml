@@ -1,0 +1,7 @@
+version: '3'
+services:
+  postgres:
+    container_name: default_container
+    build:
+      context: .
+      dockerfile: ./tools/Dockerfile.postgres
